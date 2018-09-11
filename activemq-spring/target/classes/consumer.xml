@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:common.xml"/>
+
+    <!--配置消息监听器-->
+    <bean id="consumerMessageListener" class="consumer.ConsumerMessageListener"/>
+
+    <!--配置消息监听器容器-->
+    <bean id="listenerContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destination" ref="activeMQQueue"/>
+        <property name="messageListener" ref="consumerMessageListener"/>
+    </bean>
+    <bean id="topicConsumerMessageListener" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="destination" ref="activeMQTopic"/>
+        <property name="messageListener" ref="consumerMessageListener"/>
+    </bean>
+</beans>

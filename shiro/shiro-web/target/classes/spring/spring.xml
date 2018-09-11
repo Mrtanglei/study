@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="spring-dao.xml"/>
+    <import resource="spring-redis.xml"/>
+    <context:component-scan base-package="com.shiro.*"/>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="secutiryManager"/>
+        <!--登录页的url-->
+        <property name="loginUrl" value="/jsp/login.html"/>
+        <!--未认证的跳转页面-->
+        <property name="unauthorizedUrl" value="/jsp/403.html"/>
+        <!--过滤器链-->
+        <property name="filterChainDefinitions">
+            <!--匹配是从上往下-->
+            <value>
+                <!--无需认证就能访问的路径-->
+                /jsp/login.html = anon
+                /login = anon
+                <!--需要满足角色能访问的路径 roles表示默认的shiro过滤器-->
+                /testRoels = roles["admin"]
+                <!--需要满足权限才能访问路径 perms-->
+                /testPerms = perms["delete"]
+                <!--自定义过滤器-->
+                /testRoels1 = rolesFilter["admin","admin1"]
+                /testPerms1 = rolesFilter["delete","select"]
+                <!--经过认证后才能访问的路径-->
+                /* = authc
+            </value>
+        </property>
+        <property name="filters">
+            <util:map>
+                <entry key="rolesFilter" value-ref="rolesFilter"/>
+            </util:map>
+        </property>
+    </bean>
+
+    <bean id="rolesFilter" class="com.shiro.filter.RolesFilter"/>
+
+    <!--创建SecutiryManager对象-->
+    <bean id="secutiryManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="realm"/>
+        <property name="sessionManager" ref="sessionManager"/>
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="rememberMeManager" ref="rememberMeManager"/>
+    </bean>
+
+    <bean id="realm" class="com.shiro.realm.CustomerRealm">
+        <property name="credentialsMatcher" ref="credentialsMatcher"/>
+    </bean>
+
+    <bean id="credentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+        <!--加密算法-->
+        <property name="hashAlgorithmName" value="md5"/>
+        <!--加密次数-->
+        <property name="hashIterations" value="1"/>
+    </bean>
+
+    <bean id="sessionManager" class="com.shiro.session.CustomSessionManager">
+        <property name="sessionDAO" ref="sessionDao"/>
+    </bean>
+    <bean id="sessionDao" class="com.shiro.session.SessionDao"/>
+
+    <bean id="cacheManager" class="com.shiro.cache.RedisCacheManager"/>
+
+    <bean id="rememberMeManager" class="org.apache.shiro.web.mgt.CookieRememberMeManager">
+        <property name="cookie" ref="cookie"/>
+    </bean>
+
+    <bean id="cookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="cookie"/>
+        <!--cookie过期时间-->
+        <property name="maxAge" value="10"/>
+    </bean>
+</beans>

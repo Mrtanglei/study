@@ -1,0 +1,10 @@
+redis:
+  port: 6379
+  hostName: 127.0.0.1
+  password: icepoint123
+  timeout: 15000
+  pool:
+    maxTotal: 200
+    maxIdle: 50
+    minIdle: 20
+    maxWaitMillis: 3000
