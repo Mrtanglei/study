@@ -5,17 +5,15 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
-
 /**
  * @author tanglei
  * @date 18/9/12
  */
-public class StudentDaoTest {
+public class StudentDaoImplTest {
 
     @Test
     public void list() {
-        StudentDao dao = new StudentDao();
+        StudentDaoImpl dao = new StudentDaoImpl();
         List<Student> list = dao.list();
         list.forEach(student -> {
             System.out.println(student);
@@ -24,7 +22,7 @@ public class StudentDaoTest {
 
     @Test
     public void saveTest() {
-        StudentDao dao = new StudentDao();
+        StudentDaoImpl dao = new StudentDaoImpl();
         Student student = new Student();
         student.setName("测试新增");
         student.setAge(33);
