@@ -2,3 +2,4 @@
 
 * SpringData
   * 原生jdbc
+  * spring data jpa
