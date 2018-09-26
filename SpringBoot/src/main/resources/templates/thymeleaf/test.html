@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script th:src="@{/static/js/test.js}"></script>
+</head>
+<body>
+<div>
+    姓名：<input th:id="${user.name}" th:name="${user.name}" th:value="${user.name}">
+    <br>
+    年龄：<input th:value="${user.age}">
+    <br>
+    年龄：<input th:value="${#dates.format(user.date,'yyyy-MM-dd')}">
+    <br>
+    text与utext的区别
+    <br>
+    <span th:text="${user.desc}">abc</span>
+    <br>
+    <span th:utext="${user.desc}">abc</span>
+</div>
+<h1>简洁写法</h1>
+<div th:object="${user}">
+    姓名：<input th:id="*{name}" th:name="*{name}" th:value="*{name}">
+    <br>
+    年龄：<input th:value="${user.age}">
+    <br>
+    年龄：<input th:value="*{#dates.format(date,'yyyy-MM-dd')}">
+    <br>
+    text与utext的区别
+    <br>
+    <span th:text="*{desc}">abc</span>
+    <br>
+    <span th:utext="*{desc}">abc</span>
+    <h3>URL</h3>
+    <a href="http://mvnrepository.com/" th:href="@{http://maven.aliyun.com/mvn/view}" th:text="阿里maven仓库">maven仓库</a>
+</div>
+<h3>form表达提交</h3>
+<form th:action="@{/th/postForm}" th:object="${user}" method="post" th:method="post">
+    <!-- th:field会将id、name、value属性都表示 -->
+    <input th:type="text" th:field="*{name}">
+    <br>
+    <input th:type="submit">
+</form>
+<span th:if="${user.age ge 18 ? '老勒' : '还小'}"></span>
+<h3>select</h3>
+<select th:object="${user}">
+    <option>请选择</option>
+    <option th:selected="*{age le 18}">还小</option>
+    <option th:selected="*{age ge 18}">老勒</option>
+</select>
+<h3>迭代</h3>
+<table>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>年龄备注</th>
+        <th>日期</th>
+    </tr>
+    <tr th:each="user:${list}">
+        <td th:text="${user.name}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${user.age le 18} ? 小年轻 : 真的老勒"></td>
+        <td th:text="${#dates.format(user.date,'yyyy-MM-dd hh:mm:ss')}"></td>
+    </tr>
+</table>
+</body>
+</html>
