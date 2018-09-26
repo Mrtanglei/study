@@ -6,6 +6,6 @@
 * [SpringBoot](https://github.com/Mrtanglei/study/tree/master/SpringBoot)整合各框架
   * [bean与配置文件映射](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/domain/ResourceBean.java)
   * [FreeMarker](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/FreeMarkerController.java)
-  * [开发文档](http://freemarker.foofun.cn/)
+   * [开发文档](http://freemarker.foofun.cn/)
   * [Thymeleaf](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/ThymeleafController.java)
-  * [开发文档](https://www.thymeleaf.org/index.html)
+   * [开发文档](https://www.thymeleaf.org/index.html)
