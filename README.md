@@ -3,3 +3,7 @@
 * SpringData
   * 原生jdbc
   * spring data jpa
+* [SpringBoot](https://github.com/Mrtanglei/study/tree/master/SpringBoot)整合各框架
+  * [bean与配置文件映射](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/domain/ResourceBean.java)
+  * [FreeMarker](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/FreeMarkerController.java)
+  * [Thymeleaf](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/ThymeleafController.java)
