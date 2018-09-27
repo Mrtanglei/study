@@ -9,3 +9,4 @@
     * [开发文档](http://freemarker.foofun.cn/)
   * [Thymeleaf](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/ThymeleafController.java)
     * [开发文档](https://www.thymeleaf.org/index.html)
+  * [全局异常处理](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/config/ExceptionHandler.java)
