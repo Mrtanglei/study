@@ -13,3 +13,4 @@
   * [整合redis](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/redis/RedisController.java)
   * [定时任务](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/tasks/Schedul.java)
   * [异步任务](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/tasks/AsyncTasks.java)
+  * [拦截器](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/interceptors)
