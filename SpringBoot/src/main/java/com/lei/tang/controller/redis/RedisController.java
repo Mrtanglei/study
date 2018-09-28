@@ -1,6 +1,7 @@
 package com.lei.tang.controller.redis;
 
 import com.lei.tang.domain.User;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
  */
 @RestController
 @RequestMapping("redis")
+@Slf4j
 public class RedisController {
 
     @Autowired
@@ -26,6 +28,7 @@ public class RedisController {
 
     @GetMapping(value = "/test")
     public String test() {
+        log.info("in controller");
         User user = new User();
         user.setName("aaaaa");
         redisTemplate.opsForValue().set("sss", user, 20, TimeUnit.SECONDS);
