@@ -24,7 +24,7 @@ public class FreeMarkerController {
     }
 
     @GetMapping(value = "/content")
-    public String content(ModelMap modelMap){
+    public String content(ModelMap modelMap) {
         modelMap.addAttribute("resourceBean", resourceBean);
         return "freemarker/content";
     }

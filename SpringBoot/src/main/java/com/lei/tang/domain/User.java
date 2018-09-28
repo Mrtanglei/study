@@ -3,6 +3,7 @@ package com.lei.tang.domain;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class User {
+public class User implements Serializable {
 
     private String name;
 
@@ -20,4 +21,9 @@ public class User {
     private Date date;
 
     private String desc;
+
+    @Override
+    public String toString() {
+        return "User{" + "name='" + name + '\'' + ", age=" + age + ", date=" + date + ", desc='" + desc + '\'' + '}';
+    }
 }

@@ -27,13 +27,13 @@ public class ThymeleafController {
     }
 
     @GetMapping(value = "/content")
-    public String content(ModelMap modelMap){
+    public String content(ModelMap modelMap) {
         modelMap.addAttribute("name", "Thymeleaf");
         return "thymeleaf/content";
     }
 
     @GetMapping(value = "/test")
-    public String test(ModelMap map){
+    public String test(ModelMap map) {
         List<User> list = new ArrayList<>();
         User user = new User();
         user.setAge(18);
@@ -65,7 +65,7 @@ public class ThymeleafController {
     }
 
     @PostMapping(value = "/postForm")
-    public String postForm(User user){
+    public String postForm(User user) {
         log.info(user.getName());
         return "redirect:/th/test";
     }

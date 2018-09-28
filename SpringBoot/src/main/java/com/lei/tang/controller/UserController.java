@@ -28,8 +28,8 @@ public class UserController {
         return ResponseBean.ok(user);
     }
 
-    @GetMapping(value = "/getResource",produces = "application/json;charset=utf-8")
-    public ResponseBean getResource(){
+    @GetMapping(value = "/getResource", produces = "application/json;charset=utf-8")
+    public ResponseBean getResource() {
         ResourceBean bean = new ResourceBean();
         BeanUtils.copyProperties(resourceBean, bean);
         return ResponseBean.ok(bean);

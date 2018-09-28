@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ErrorController {
 
     @GetMapping("/error")
-    public void error(){
-        int i = 1/0;
+    public void error() {
+        int i = 1 / 0;
     }
 }
