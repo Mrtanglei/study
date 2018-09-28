@@ -1,4 +1,4 @@
-package com.lei.tang.schedul;
+package com.lei.tang.tasks;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -9,6 +9,8 @@ import java.util.Date;
 /**
  * @author tanglei
  * @date 18/9/28
+ *
+ * 定时任务
  */
 @Component
 public class Schedul {
