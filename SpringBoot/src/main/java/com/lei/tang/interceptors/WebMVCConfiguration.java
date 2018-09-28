@@ -1,6 +1,5 @@
-package com.lei.tang.config;
+package com.lei.tang.interceptors;
 
-import com.lei.tang.interceptors.OneInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
