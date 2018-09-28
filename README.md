@@ -11,3 +11,4 @@
     * [开发文档](https://www.thymeleaf.org/index.html)
   * [全局异常处理](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/config/ExceptionHandler.java)
   * [整合redis](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/controller/redis/RedisController.java)
+  * [定时任务](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/schedul)
