@@ -14,3 +14,5 @@
   * [定时任务](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/tasks/Schedul.java)
   * [异步任务](https://github.com/Mrtanglei/study/blob/master/SpringBoot/src/main/java/com/lei/tang/tasks/AsyncTasks.java)
   * [拦截器](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/interceptors)
+  * [SpringBoot邮件发送](https://github.com/Mrtanglei/study/tree/master/studys/email)
+    * 普通文本邮件发送、HTML邮件发送、附件发送、静态资源邮件发送、模板邮件发送
