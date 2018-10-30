@@ -1,0 +1,26 @@
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
+    <id>dist-dir</id>
+    <formats>
+        <format>dir</format>
+    </formats>
+    <!--是否包含根目录-->
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <!--包含项目中的模块-->
+    <moduleSets>
+        <moduleSet>
+            <!--包含项目中所有的模块-->
+            <useAllReactorProjects>true</useAllReactorProjects>
+            <includes>
+                <include>java9.sms.*</include>
+            </includes>
+            <binaries>
+                <!--定义文件路径-->
+                <outputDirectory>moduls</outputDirectory>
+                <!--是否解压缩-->
+                <unpack>false</unpack>
+            </binaries>
+        </moduleSet>
+    </moduleSets>
+</assembly>
