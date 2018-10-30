@@ -16,3 +16,5 @@
   * [拦截器](https://github.com/Mrtanglei/study/tree/master/SpringBoot/src/main/java/com/lei/tang/interceptors)
   * [SpringBoot邮件发送](https://github.com/Mrtanglei/study/tree/master/studys/email)
     * 普通文本邮件发送、HTML邮件发送、附件发送、静态资源邮件发送、模板邮件发送
+  * [java9模块化](https://github.com/Mrtanglei/study/tree/master/java9)
+    * 基本模块应用，assembly打包
